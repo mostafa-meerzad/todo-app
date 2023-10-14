@@ -13,19 +13,17 @@ const Footer = ({
     <FooterStyled>
       <span>{todosLeft} items left</span>
       <div>
-        <Button onClick={onShowAll} data-active={filter === "all"}>
+        <Button onClick={onShowAll} active={filter === "all"}>
           all
         </Button>
-        <Button onClick={onShowActives} data-active={filter === "active"}>
+        <Button onClick={onShowActives} active={filter === "active"}>
           active
         </Button>
-        <Button onClick={onShowCompleted} data-active={filter === "completed"}>
+        <Button onClick={onShowCompleted} active={filter === "completed"}>
           completed
         </Button>
       </div>
-      <Button onClick={onRemoveAll} aria-labelledby="remove all">
-        remove all
-      </Button>
+      <Button onClick={onRemoveAll}>remove all</Button>
     </FooterStyled>
   );
 };

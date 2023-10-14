@@ -7,10 +7,15 @@ import { TodoStyled } from "./TodoStyled";
 const Todo = ({ task, id, done, onRemove, onComplete }) => {
   const handleRemove = (id) => onRemove(id);
   const handleComplete = (id) => onComplete(id);
+
+  // console.log(done);
   return (
     <TodoStyled>
-      <CheckButton aria-label="complete" onClick={() => handleComplete(id)}>
-      </CheckButton>
+      <CheckButton
+        aria-label="complete"
+        onClick={() => handleComplete(id)}
+        check={done}
+      ></CheckButton>
       <p>{task}</p>
       <CrossButton aria-label="remove" onClick={() => handleRemove(id)}>
         <Cross />

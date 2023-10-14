@@ -7,6 +7,7 @@ const MainWrapperStyled = styled.div`
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
+  /* border: 2px solid red; */
 
   background-image: ${({ currentTheme }) =>
     currentTheme === "dark"
@@ -16,7 +17,11 @@ const MainWrapperStyled = styled.div`
   background-size: 100% 15rem;
   background-repeat: no-repeat;
 
-  background-color: black;
+  
+  background-color: ${({ $currentTheme, theme }) =>
+    $currentTheme === "dark"
+      ? theme.bodyBackground
+      : theme.bodyBackground};
 `;
 
 export default MainWrapperStyled;

@@ -1,12 +1,10 @@
 import styled from "styled-components";
 
-const StyledHeader = styled.header`
+const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-block-end: 0.5rem;
-
-  ${(props)=>console.log(props)}
 
   & > h1 {
     text-transform: uppercase;
@@ -22,4 +20,4 @@ const StyledHeader = styled.header`
 
 `;
 
-export { StyledHeader };
+export { HeaderStyled  };

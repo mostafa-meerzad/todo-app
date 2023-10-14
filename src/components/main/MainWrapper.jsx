@@ -2,7 +2,7 @@ import MainWrapperStyled from "./MainWrapperStyled";
 
 const MainWrapper = ({ currentTheme, children }) => {
   return (
-    <MainWrapperStyled currentTheme={currentTheme}>
+    <MainWrapperStyled $currentTheme={currentTheme}>
       {children}
     </MainWrapperStyled>
   );

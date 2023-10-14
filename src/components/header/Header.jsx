@@ -1,16 +1,16 @@
 import Moon from "../Moon";
 import Sun from "../Sun";
-import { StyledHeader } from "./HeaderStyled";
+import { HeaderStyled } from "./HeaderStyled";
 
 const Header = ({ theme, toggleTheme }) => {
-  const handleTheme = () => toggleTheme();
+  // const handleClick = ()=> toggleTheme()
   return (
-    <StyledHeader>
+    <HeaderStyled>
       <h1>todo</h1>
-      <button onClick={handleTheme} aria-label="toggle-theme">
+      <button onClick={toggleTheme} aria-label="toggle-theme">
         {theme === "dark" ? <Sun /> : <Moon />}
       </button>
-    </StyledHeader>
+    </HeaderStyled>
   );
 };
 export default Header;
