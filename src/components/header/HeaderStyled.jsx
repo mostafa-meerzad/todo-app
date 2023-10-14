@@ -6,6 +6,8 @@ const StyledHeader = styled.header`
   align-items: center;
   margin-block-end: 0.5rem;
 
+  ${(props)=>console.log(props)}
+
   & > h1 {
     text-transform: uppercase;
     letter-spacing: 10px;

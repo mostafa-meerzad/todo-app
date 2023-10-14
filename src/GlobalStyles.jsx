@@ -3,25 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 body{
     font-family: 'Josefin Sans', sans-serif;
-    padding:3rem 0 0 ;
+    padding: 0;
     margin:0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* display: grid; */
-    /* place-content: center; */
-    /* width: 100vw; */
-    /* height: 100; */
     /* border: 2px solid red; */
-    position: relative;
-
-    background-image: url("./bg-mobile-light.jpg");
-    background-position: center top ;
-    background-size: 100% 90%;
-    background-repeat: no-repeat;
-
-
-
 
 /* overflow-y: visible; */
     /* ### Light Theme */
@@ -43,15 +27,12 @@ body{
 
 }
 
+
+
 ul,ol{
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
 
-main{
-    width: 23rem;
-    /* width: 100%; */
-    position: sticky;
-}
 `;

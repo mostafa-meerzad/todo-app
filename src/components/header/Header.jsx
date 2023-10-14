@@ -3,7 +3,7 @@ import Sun from "../Sun";
 import { StyledHeader } from "./HeaderStyled";
 
 const Header = ({ theme, toggleTheme }) => {
-  const handleTheme = () => toggleTheme;
+  const handleTheme = () => toggleTheme();
   return (
     <StyledHeader>
       <h1>todo</h1>
