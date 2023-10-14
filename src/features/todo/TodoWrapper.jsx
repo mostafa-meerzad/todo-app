@@ -33,7 +33,10 @@ const TodoWrapper = () => {
   const handleShowAll = () => setFilter("all");
   const handleShowCompleted = () => setFilter("completed");
   const handleShowActives = () => setFilter("active");
-  const handleRemoveAll = () => dispatch(removeAll());
+  const handleRemoveAll = () => {
+    dispatch(removeAll());
+    setFilter("all");
+  };
 
   return (
     <TodoWrapperStyled>
@@ -49,13 +52,15 @@ const TodoWrapper = () => {
             onComplete={(id) => dispatch(completeTodo(id))}
           />
         ))}
+        <Footer
+          onRemoveAll={handleRemoveAll}
+          onShowActives={handleShowActives}
+          onShowAll={handleShowAll}
+          onShowCompleted={handleShowCompleted}
+          todosLeft={todosLeft}
+          filter={filter}
+        />
       </ul>
-      <Footer
-        onRemoveAll={handleRemoveAll}
-        onShowActives={handleShowActives}
-        onShowAll={handleShowAll}
-        onShowCompleted={handleShowCompleted}
-      />
     </TodoWrapperStyled>
   );
 };
