@@ -12,7 +12,7 @@ export const todoSlice = createSlice({
       const todo = {
         id: uuidv4(),
         task: action.payload,
-        done: false,
+        isCompleted: false,
       };
 
       state.todos.unshift(todo);
@@ -23,7 +23,7 @@ export const todoSlice = createSlice({
         if (td.id === action.payload) return td;
       });
 
-      if (todo) todo.done = true;
+      if (todo) todo.isCompleted = true;
 
       state.todos = [...state.todos];
     },

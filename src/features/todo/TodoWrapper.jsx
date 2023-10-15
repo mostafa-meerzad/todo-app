@@ -42,12 +42,12 @@ const TodoWrapper = () => {
     <TodoWrapperStyled>
       <TodoInput onComplete={(todo) => dispatch(addTodo(todo))} />
       <ul>
-        {todos.map(({ id, task, done }) => (
+        {todos.map(({ id, task, isCompleted }) => (
           <Todo
             key={id}
             id={id}
             task={task}
-            done={done}
+            isCompleted={isCompleted}
             onRemove={(id) => dispatch(removeTodo(id))}
             onComplete={(id) => dispatch(completeTodo(id))}
           />

@@ -2,16 +2,16 @@ import Check from "../Check";
 import CheckButtonStyled from "./CheckButtonStyled";
 
 
-const CheckButton = ({ ariaLabel, check, onClick, ...args }) => {
-  // const handleClick = () => onClick();
+const CheckButton = ({ ariaLabel, showTick, onClick, ...args }) => {
+
   return (
     <CheckButtonStyled
       aria-label={ariaLabel}
       onClick={onClick}
-      $check={check}
+      $showTick={showTick}
       {...args}
     >
-      {check && <Check />}
+      {showTick && <Check />}
     </CheckButtonStyled>
   );
 };

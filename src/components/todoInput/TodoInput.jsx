@@ -32,7 +32,7 @@ const TodoInput = ({ onComplete }) => {
       <CheckButton
         ariaLabel={"add-todo"}
         onClick={handleComplete}
-        check={isCompleted}
+        showTick={isCompleted}
       />
 
       <input

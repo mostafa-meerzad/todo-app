@@ -13,8 +13,8 @@ const CheckButtonStyled = styled.div`
   background-color: transparent;
   z-index: 0;
   background-color: ${({ theme }) => theme.buttonBorder};
-  background-image: ${({ $check }) =>
-    $check
+  background-image: ${({ $showTick }) =>
+    $showTick
       ? "linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))"
       : "none"};
 
@@ -32,8 +32,8 @@ const CheckButtonStyled = styled.div`
     inset: 6%;
     border-radius: 50%;
     background-color: ${({ theme }) => theme.background};
-    background-image: ${({ $check }) =>
-      $check
+    background-image: ${({ $showTick }) =>
+      $showTick
         ? "linear-gradient(120deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%))"
         : "none"};
     z-index: -1;
