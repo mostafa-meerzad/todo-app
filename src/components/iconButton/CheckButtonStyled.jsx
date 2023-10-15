@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CheckButtonStyled = styled.div`
+const CheckButtonStyled = styled.button`
   width: 1.2rem;
   height: 1.2rem;
   padding: 0;
