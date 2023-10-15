@@ -12,7 +12,7 @@ export const theme = {
     bodyBackground: "hsl(240deg 20% 95.1%)",
     background: "hsl(0, 0%, 98%)",
     text: "hsl(235, 19%, 35%)",
-    textCrossed: "hsl(236, 9%, 61%)",
+    textCrossed: "hsl(233, 11%, 84%)",
     borderColor: "hsl(233, 11%, 84%)",
     buttonHover: "hsl(235, 19%, 35%)",
     buttonBorder:"hsl(236, 33%, 92%)"

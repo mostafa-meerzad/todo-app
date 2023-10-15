@@ -13,6 +13,10 @@ export const TodoStyled = styled.li`
   & > p {
     width: 80%;
     word-wrap: break-word;
+    text-decoration: ${({ $isCompleted }) =>
+      $isCompleted ? "line-through" : "none"};
+    color: ${({ $isCompleted, theme }) =>
+      $isCompleted ? theme.textCrossed : ""};
   }
 
   & button:last-child {

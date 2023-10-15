@@ -1,4 +1,3 @@
-import Check from "../Check";
 import Cross from "../Cross";
 import CheckButton from "../iconButton/CheckButton";
 import CrossButton from "../iconButton/CrossButton";
@@ -8,9 +7,8 @@ const Todo = ({ task, id, isCompleted, onRemove, onComplete }) => {
   const handleRemove = (id) => onRemove(id);
   const handleComplete = (id) => onComplete(id);
 
-  // console.log(isCompleted);
   return (
-    <TodoStyled $completed={isCompleted}>
+    <TodoStyled $isCompleted={isCompleted}>
       <CheckButton
         aria-label="complete"
         onClick={() => handleComplete(id)}
