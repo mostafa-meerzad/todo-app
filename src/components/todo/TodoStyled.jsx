@@ -10,7 +10,6 @@ export const TodoStyled = styled.li`
   border-bottom: 1px solid ${({ theme }) => theme.borderColor};
   color: ${({ theme }) => theme.text};
 
-  /* box-shadow: 0 0 5px 20px black; */
   & > p {
     width: 80%;
     word-wrap: break-word;

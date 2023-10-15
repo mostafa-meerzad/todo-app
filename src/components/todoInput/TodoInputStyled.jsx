@@ -22,8 +22,7 @@ const TodoInputStyled = styled.div`
     font-weight: 400;
     font-family: "Josefin Sans", sans-serif;
   }
-  /* ${({ $empty }) => console.log($empty)} */
-
+ 
   box-shadow: ${({ $empty }) => ($empty ? "inset 0 0 8px red" : "none")};
 `;
 

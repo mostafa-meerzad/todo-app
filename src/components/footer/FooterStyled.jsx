@@ -8,11 +8,8 @@ const FooterStyled = styled.li`
   min-height: 3rem;
   background-color: ${({ theme }) => theme.background};
   color: hsl(234, 11%, 52%);
-  /* color: hsl(233, 14%, 35%); */
-
   & span {
     font-size: 0.8rem;
-    /* color: currentColor; */
   }
 `;
 
