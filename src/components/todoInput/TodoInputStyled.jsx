@@ -4,20 +4,23 @@ const TodoInputStyled = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1rem;
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.background};
   border: none;
   border-radius: 0.3rem;
   padding: 1rem;
-  margin-block-end:1.5rem;
+  margin-block-end: 1.5rem;
+  box-shadow: 0px 3px 16px -5px black;
 
   & > input {
     flex: 1;
-    font-size: 1rem;
-    font-weight: 400;
-    padding: .2rem;
+    padding: 0.2rem;
     border: none;
     outline: none;
-    font-family: 'Josefin Sans', sans-serif;
+    color: ${({ theme }) => theme.text};
+    background-color: ${({ theme }) => theme.background};
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: "Josefin Sans", sans-serif;
   }
 `;
 
