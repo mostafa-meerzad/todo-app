@@ -15,7 +15,7 @@ export const todoSlice = createSlice({
         done: false,
       };
 
-      state.todos.push(todo);
+      state.todos.unshift(todo);
     },
 
     completeTodo: (state, action) => {
