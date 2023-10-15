@@ -1,11 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 import { createSlice } from "@reduxjs/toolkit";
 
-let initialTodo;
+let savedTodo;
+let initialTodo = [];
+
 try {
-  const savedTodo = JSON.parse(localStorage.getItem("todo"));
-  if (!savedTodo) initialTodo = [];
-  initialTodo = savedTodo;
+  savedTodo = JSON.parse(localStorage.getItem("todo"));
+  if (savedTodo) initialTodo = savedTodo;
 } catch (e) {
   alert("Something went wrong. Could not load Todos from localStorage!");
   console.log("something went wrong: ", e);
