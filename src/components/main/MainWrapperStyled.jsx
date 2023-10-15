@@ -17,6 +17,14 @@ const MainWrapperStyled = styled.div`
 
   background-color: ${({ $currentTheme, theme }) =>
     $currentTheme === "dark" ? theme.bodyBackground : theme.bodyBackground};
+
+@media all and (min-width:1024px) {
+  background-image: ${({ $currentTheme }) =>
+    $currentTheme === "dark"
+      ? 'url("./bg-desktop-dark.jpg")'
+      : 'url("./bg-desktop-light.jpg")'};
+}
+
 `;
 
 export default MainWrapperStyled;

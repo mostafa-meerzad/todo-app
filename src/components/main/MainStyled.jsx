@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 const MainStyled = styled.main`
-  width: 25rem;
-  /* border: 2px solid red; */
+  width: 23rem;
   position: sticky;
-  /* top: 5rem; */
+
+  @media all and (min-width:1024px) {
+
+    width: 35rem;
+  }
+
 `;
 
 export default MainStyled;
