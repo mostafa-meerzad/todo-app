@@ -16,11 +16,16 @@ const TodoInput = ({ onComplete }) => {
       setTimeout(() => {
         setIsCompleted(false);
       }, 700);
+      return;
     }
-    setIsTodoEmpty(true);
+    return setIsTodoEmpty(true);
   };
   const handleKeyDown = (e) => {
     if (e.key.toLowerCase() === "enter") handleComplete();
+  };
+  const handleChange = (e) => {
+    setTodo(e.target.value);
+    setIsTodoEmpty(false);
   };
   return (
     <TodoInputStyled $empty={isTodoEmpty}>
@@ -34,7 +39,7 @@ const TodoInput = ({ onComplete }) => {
         autoFocus={true}
         type="text"
         value={todo}
-        onChange={(e) => setTodo(e.target.value)}
+        onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder="enter your todo..."
       />
