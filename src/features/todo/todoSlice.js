@@ -1,11 +1,25 @@
 import { v4 as uuidv4 } from "uuid";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+let initialTodo;
+try {
+  const savedTodo = JSON.parse(localStorage.getItem("todo"));
+  if (!savedTodo) initialTodo = [];
+  initialTodo = savedTodo;
+} catch (e) {
+  alert("Something went wrong. Could not load Todos from localStorage!");
+  console.log("something went wrong: ", e);
+}
+
+const saveTodos = (todos) => {
+  const stringifiedTodo = JSON.stringify(todos);
+  localStorage.setItem("todo", stringifiedTodo);
+};
+
 export const todoSlice = createSlice({
   name: "todo",
-  initialState:{
-    todos:[]
+  initialState: {
+    todos: initialTodo,
   },
   reducers: {
     addTodo: (state, action) => {
@@ -16,6 +30,8 @@ export const todoSlice = createSlice({
       };
 
       state.todos.unshift(todo);
+      console.log(state.todos);
+      saveTodos(state.todos);
     },
 
     completeTodo: (state, action) => {
@@ -26,6 +42,7 @@ export const todoSlice = createSlice({
       if (todo) todo.isCompleted = true;
 
       state.todos = [...state.todos];
+      saveTodos(state.todos);
     },
 
     removeTodo: (state, action) => {
@@ -38,9 +55,13 @@ export const todoSlice = createSlice({
       state.todos.splice(todoIndex, 1);
 
       state.todos = [...state.todos];
+      saveTodos(state.todos);
     },
     removeAll: (state) => {
-      state.todos = initialState;
+      // set todos to "[]" in order to clear all todos and also set localStorage to "[]"
+
+      state.todos = [];
+      saveTodos([]);
     },
   },
 });
