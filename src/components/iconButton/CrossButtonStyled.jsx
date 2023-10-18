@@ -9,6 +9,10 @@ const CrossButtonStyled = styled(motion.button)`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (hover: none) {
+    opacity: 1 !important;
+  }
 `;
 
 export default CrossButtonStyled;
