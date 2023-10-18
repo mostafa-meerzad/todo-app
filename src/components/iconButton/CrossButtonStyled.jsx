@@ -1,6 +1,6 @@
 import styled from "styled-components";
-
-const CrossButtonStyled = styled.button`
+import { motion } from "framer-motion";
+const CrossButtonStyled = styled(motion.button)`
   width: 1rem;
   height: 1rem;
   padding: 0;
@@ -9,7 +9,6 @@ const CrossButtonStyled = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-
 `;
 
 export default CrossButtonStyled;

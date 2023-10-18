@@ -5,8 +5,11 @@ const ButtonStyled = styled.button`
   background-color: transparent;
   color: ${({ $active }) => ($active ? "hsl(220, 98%, 61%)" : "currentColor")};
   cursor: pointer;
-  &:hover {
-    color: ${({ theme }) => theme.buttonHover};
+
+  @media all and (hover: hover) {
+    &:hover {
+      color: ${({ theme }) => theme.buttonHover};
+    }
   }
 `;
 

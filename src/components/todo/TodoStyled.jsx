@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const TodoStyled = styled.li`
+export const TodoStyled = styled(motion.li)`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,10 +20,4 @@ export const TodoStyled = styled.li`
       $isCompleted ? theme.textCrossed : ""};
   }
 
-  & button:last-child {
-    opacity: 0;
-  }
-  &:hover button:last-child {
-    opacity: 1;
-  }
 `;

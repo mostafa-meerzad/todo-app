@@ -16,6 +16,7 @@ import {
 import Todo from "../../components/todo/Todo";
 import TodoInput from "../../components/todoInput/TodoInput";
 import Footer from "../../components/footer/Footer";
+import { AnimatePresence, motion, stagger } from "framer-motion";
 
 const TodoWrapper = () => {
   const dispatch = useDispatch();
@@ -42,24 +43,26 @@ const TodoWrapper = () => {
     <TodoWrapperStyled>
       <TodoInput onComplete={(todo) => dispatch(addTodo(todo))} />
       <ul>
-        {todos.map(({ id, task, isCompleted }) => (
-          <Todo
-            key={id}
-            id={id}
-            task={task}
-            isCompleted={isCompleted}
-            onRemove={(id) => dispatch(removeTodo(id))}
-            onComplete={(id) => dispatch(completeTodo(id))}
+        <AnimatePresence>
+          {todos.map(({ id, task, isCompleted }) => (
+            <Todo
+              key={id}
+              id={id}
+              task={task}
+              isCompleted={isCompleted}
+              onRemove={(id) => dispatch(removeTodo(id))}
+              onComplete={(id) => dispatch(completeTodo(id))}
+            />
+          ))}
+          <Footer
+            onRemoveAll={handleRemoveAll}
+            onShowActives={handleShowActives}
+            onShowAll={handleShowAll}
+            onShowCompleted={handleShowCompleted}
+            todosLeft={todosLeft}
+            filter={filter}
           />
-        ))}
-        <Footer
-          onRemoveAll={handleRemoveAll}
-          onShowActives={handleShowActives}
-          onShowAll={handleShowAll}
-          onShowCompleted={handleShowCompleted}
-          todosLeft={todosLeft}
-          filter={filter}
-        />
+        </AnimatePresence>
       </ul>
     </TodoWrapperStyled>
   );
