@@ -6,6 +6,7 @@ import {
   selectAll,
   selectCompleted,
   selectTodosLeft,
+  selectTodosNum,
 } from "./todoSelectors.js";
 
 import { useState } from "react";
@@ -16,7 +17,7 @@ import {
 import Todo from "../../components/todo/Todo";
 import TodoInput from "../../components/todoInput/TodoInput";
 import Footer from "../../components/footer/Footer";
-import { AnimatePresence, motion, stagger } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const TodoWrapper = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ const TodoWrapper = () => {
   });
 
   const todosLeft = useSelector(selectTodosLeft);
+  const todosNum = useSelector(selectTodosNum)
 
   const handleShowAll = () => setFilter("all");
   const handleShowCompleted = () => setFilter("completed");
@@ -61,6 +63,7 @@ const TodoWrapper = () => {
             onShowCompleted={handleShowCompleted}
             todosLeft={todosLeft}
             filter={filter}
+            todosNum={todosNum}
           />
         </AnimatePresence>
       </ul>

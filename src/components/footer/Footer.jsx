@@ -8,23 +8,27 @@ const Footer = ({
   onShowActives,
   onRemoveAll,
   filter,
+  todosNum
 }) => {
-  return (
-    <FooterStyled>
-      <span>{todosLeft} items left</span>
-      <div>
-        <Button onClick={onShowAll} active={filter === "all"}>
-          all
-        </Button>
-        <Button onClick={onShowActives} active={filter === "active"}>
-          active
-        </Button>
-        <Button onClick={onShowCompleted} active={filter === "completed"}>
-          completed
-        </Button>
-      </div>
-      <Button onClick={onRemoveAll}>remove all</Button>
-    </FooterStyled>
-  );
+  if (todosNum !== 0)
+    return (
+      <FooterStyled>
+        <span>{todosLeft} items left</span>
+        <div>
+          <Button onClick={onShowAll} active={filter === "all"}>
+            all
+          </Button>
+          <Button onClick={onShowActives} active={filter === "active"}>
+            active
+          </Button>
+          <Button onClick={onShowCompleted} active={filter === "completed"}>
+            completed
+          </Button>
+        </div>
+        <Button onClick={onRemoveAll}>remove all</Button>
+      </FooterStyled>
+    );
+
+  return null;
 };
 export default Footer;

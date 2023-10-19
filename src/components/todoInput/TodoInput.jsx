@@ -41,7 +41,7 @@ const TodoInput = ({ onComplete }) => {
         value={todo}
         onChange={handleChange}
         onKeyDown={handleKeyDown}
-        placeholder="enter your todo..."
+        placeholder="Create new todo..."
       />
     </TodoInputStyled>
   );
